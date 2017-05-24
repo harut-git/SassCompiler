@@ -6,7 +6,7 @@ from multiprocessing import Pool, cpu_count
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-PATH = "../web-project/skins"
+PATH = "../web-project/skins/"
 
 
 def compile_file(name):
@@ -14,7 +14,7 @@ def compile_file(name):
     try:
         # outfile = open("../web-project/skins/" + name + "/sass/skin.scss", 'r')
         # k = outfile.read()
-        os.chdir("../web-project/skins/" + name + "/sass")
+        os.chdir(PATH + name + "/sass")
         my_output = sass.compile(filename="skin.scss")
         with open("../css/skin.css", 'w') as out:
             out.write(my_output)
