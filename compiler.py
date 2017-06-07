@@ -18,7 +18,7 @@ def compile_file(name):
         my_output = sass.compile(filename="skin.scss")
         with open("../css/skin.css", 'w') as out:
             out.write(my_output)
-            print name
+            print name + ' compiled'
     except Exception as e:
         pass
         print type(e), name, e.message
@@ -53,9 +53,12 @@ def compile_all_async(path):
 #
 # print '>>> async'
 # print time_it(compile_all_async, PATH)
-
-k = input('Enter skin url\n')
-if k == 'allskins':
-    compile_all_async(PATH)
-else:
-    compile_file(k)
+while 1:
+    k = raw_input('Enter skin url\n')
+    if k == 'allskins':
+        compile_all_async(PATH)
+        break
+    elif k == 'exit':
+        break
+    else:
+        compile_file(k)
