@@ -43,7 +43,7 @@ def compile_all_async(path):
 #
 #
 # def time_it(func, *args):
-#     start = timer()
+#     start = timer()a
 #     func(*args)
 #     return timer() - start
 #
@@ -62,3 +62,5 @@ while 1:
         break
     else:
         compile_file(k)
+
+# compile_all_async(PATH)
